@@ -2,7 +2,7 @@
   <div class="container">
     <h3>Categorias</h3>
     <ul>
-      <li v-for="categoria in tecnologias">
+      <li v-for="categoria in categorias">
         {{categoria.descricao}}
       </li>
     </ul>
