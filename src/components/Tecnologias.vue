@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <h3>Categorias</h3>
+    <h2>Tecnologias</h2>
     <ul>
-      <li v-for="categoria in tecnologias">
-        {{categoria.descricao}}
+      <li v-for="tecnologia in tecnologias">
+        {{tecnologia.titulo}}
       </li>
     </ul>
   </div>
@@ -14,12 +14,13 @@
     name: 'Home',
     data () {
       return {
-        categorias: ''
+        tecnologias: ''
       }
     },
     mounted () {
-      this.$http.get('http://127.0.0.1:8000/api/subtemas/1').then(response => {
-        this.categorias = response.body
+      this.$http.get('http://127.0.0.1:8000/api/tecnologias/').then(response => {
+        this.tecnologias = response.body.data
+        console.log(response.body.data)
       })
     }
   }
